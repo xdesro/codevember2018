@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+
+body {
+  background: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 15vmin;
+  line-height: 0;
+}
+
+
+p {
+  position: absolute;
+  color: #fff;
+  opacity: 0.8;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: "infinity";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &:before {
+    opacity: 0.2;
+    animation: glitchLeft 5s linear infinite;
+  }
+
+  &:after {
+    opacity: 0.1;
+    animation: glitchRight 5s linear infinite;
+  }
+}
+
+@keyframes glitchLeft {
+
+  0%,
+  50%,
+  51%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50.5% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes glitchRight {
+
+  0%,
+  70%,
+  76%,
+  100% {
+    transform: translateX(0);
+  }
+
+  71% {
+    transform: translateX(-20px);
+  }
+}
