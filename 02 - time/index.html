@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>time</p>
+    <div class="app">
+        <div class="clock">
+            <div class="center"></div>
+            <div class="hand minute"></div>
+            <div class="hand hour"></div>
+            <div class="date"></div>
+        </div>
+        <div class="sweller champagne">
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="sweller magenta">
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="sweller blue">
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="sweller cerulean">
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="sweller cyan">
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="disruptor"></div>
+            <div class="dot"></div>
+        </div>
+        <!--   <div class="sweller">
+          <div class="dot pink"></div>
+          <div class="dot blue"></div>
+          <div class="dot cerulean"></div>
+          <div class="dot cyan"></div>
+          
+          <div class="disruptor magenta"></div>
+          <div class="disruptor pink"></div>
+          <div class="disruptor blue"></div>
+          <div class="disruptor cerulean"></div>
+          <div class="disruptor cyan"></div>
+        </div> -->
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+        </defs>
+    </svg>
+</body>
+
+</html>
