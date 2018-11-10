@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="hover"></div>
+  <div class="scene">
+    <div class="sky">
+      <div class="moon"></div>
+      <div class="sun"></div>
+      <div class="stars"></div>
+      <div class="clouds"></div>
+    </div>
+    <div class="foreground">
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+    </div>
+  </div>
+  <svg class="clips">
+    <defs>
+      <filter id="grain" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence id="fe-turb-turbulence" type="fractalNoise" baseFrequency="0.5445" numOctaves="1" out="turbulence" />
+        <feComponentTransfer in="monochrome-turbulence" out="transparent-turbulence">
+          <feFuncA type="linear" slope="0.3" />
+        </feComponentTransfer>
+        <feBlend in="SourceGraphic" in2="transparent-turbulence" mode="multiply"></feBlend>
+      </filter>
+      <clipPath id="moon" transform="scale(.005780347 .005555556)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 173 180" -->
+        <path d="M172.576 54.1488C160.1824 36.52 139.6866 25 116.5 25 78.6685 25 48 55.6685 48 93.5S78.6685 162 116.5 162c16.6927 0 31.9908-5.9709 43.8751-15.8934C143.8842 166.7642 118.4878 180 90 180c-49.7056 0-90-40.2944-90-90S40.2944 0 90 0c36.9633 0 68.7221 22.283 82.576 54.1488z" />
+      </clipPath>
+      <clipPath id="stars" transform="scale(.005649718 .015625)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 177 64" -->
+        <path d="M47 61h3v3h-3zM58 36h3v3h-3zM88 25h3v3h-3zM95 53h3v3h-3zM114 55h3v3h-3zM123 38h3v3h-3zM24 30h3v3h-3zM64 0h3v3h-3zM37 10h3v3h-3zM174 56h3v3h-3zM0 33h3v3H0z" />
+      </clipPath>
+      <clipPath id="clouds" transform="scale(.002915452 .013888889)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 343 72" -->
+        <path d="M.269 1.6474C31.1404-1.085 58.171.277 81.3605 5.7333 47.641 6.9763 20.6104 6.7929.2689 5.183V1.6474zM20.0774 35.5822c28.677-9.0096 62.2197-10.3364 100.6281-3.9804l44.0618 3.9804c-50.5646 3.2235-98.7946 3.2235-144.69 0zM284.3086 70.526c-68.1799-8.5033-107.263-9.1806-117.2497-2.0319 25.3057 3.1537 64.3889 3.831 117.2497 2.032zM340.5879 46.705v10.1958h1.8803c-22.6684 3.0578-51.2498 3.3483-85.7442.8717-46.3084-3.3248-53.9092-7.0804-22.8024-11.2668 61.6507 1.3496 94.2934 1.3496 97.928 0 1.5855-.5887 4.4982-.5223 8.7383.1992z" />
+      </clipPath>
+      <clipPath id="mountain-1" transform="scale(.00280112 .006802721)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 357 147" -->
+        <path d="M356.9545 5.423h-16.5693l-8.7151 3.2488-18.0183-.806-5.4221 4.6669-2.0758-1.5529-13.088 6.4039-13.1317-10.7486h-3.7682l-5.5382-4.862L259.3205.0809l-16.1203 10.8989-9.7352 1.5529-48.5042-10.7596-29.8406 6.0927L.8989 5.423v141.0875h356.0556z" />
+      </clipPath>
+      <clipPath id="mountain-2" transform="scale(.002915452 .005076142)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 343 197" -->
+        <path d="M.4196.6609l9.6634 7.0387h9.8075l8.13-3.7022 12.8459 11.7043 16.2535 3.5548 3.3135 2.8243 7.617 1.5906 8.1493 7.071 4.1527-4.3208 13.2726 4.3208 10.9111 6.7491h8.5998l4.264 7.9913h4.3222L127.1184 50l9.1911 2.4482 3.843 4.1993h12.6612l18.5202 12.662 3.1964 4.0671h8.4346l16.5531 12.8516h15.1104l20.5261 3.991 20.4873 1.0727 3.9817-10.5792 6.0824-4.361 15.8863-1.429 8.75-5.6132 36.7264 1.2824 6.5164 5.7598h8.6329v120.0779H.4196z" />
+      </clipPath>
+      <clipPath id="mountain-3" transform="scale(.002923977 .006711409)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 342 149" -->
+        <path d="M0 .8324h5.0059l15.5282 11.6688 10.5345-2.1333 1.8381 2.1333 10.638-2.1333 17.8681 7.259h17.8327l37.2325 18.3582h4.4791l41.1257 21.4166h14.2451l10.0371 9.5517 9.0123 2.7045 11.005-6.7355h5.0791l2.3961-2.0421h30.7066l19.7276 2.0421 9.8378-3.297 30.1448-2.2237 23.2677 2.2237 14.2563 1.2549v87.2185H0z" />
+      </clipPath>
+      <clipPath id="mountain-4" transform="scale(.002898551 .008196721)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 345 122" -->
+        <path d="M.3501 121.893L6.7947.7079l22.1396 13.2104h31.9134l25.8674 5.9315 11.9992-2.8396 8.6988 14.5041h4.5924l13.8278 6.347 5.6287 17.8298 15.2174 11.2002 24.1212 16.2368 58.0432-3.96 115.6406 42.7249z" />
+      </clipPath>
+      <clipPath id="mountain-5" transform="scale(.002915452 .009803922)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 343 102" -->
+        <path d="M118.271 60.9976l19.1743-8.7142 19-2.208 2.7955-6.4017h-2.7955l2.7955-6.4584h-2.7955l3.8851-6.0875 3.1578-7.7067 2.1976 8.6316 3.7124 5.1626h-2.5215l3.6288 6.4584-3.6288-.6747 2.5215 2.5215 3.8436 1.1457 21.7937-8.5553 3.1749-.8956v-3.6984h-9.4863l4.9509-7.0154h-2.8986l4.2591-7.7232h-3.0127l4.5904-9.0787 3.0407-9.6035 3.813 10.5015 3.6996 8.1807h-2.8747l4.6031 7.7232h-1.7284l3.4062 7.0154h-9.3241v2.2641h14.203l3.2408-6.6567-3.2408.6522 4.0754-6.3554-1.7455-.8236 3.1798-8.1215 3.2188-8.2234 2.862 8.2234 4.0089 8.1215-2.6637.8236 4.857 5.7032h-2.1933l.8132 4.3926 5.5623-1.4642 18.7737-10.2977 4.475 1.6661h10.8541l1.6479-4.6428h-2.757l3.8777-5.3126h-2.7686l4.2146-8.0423 2.0846-5.3273 3.419 6.1565 4.472 8.2234h-3.5697l3.5697 5.9783h-3.5697l1.1805 2.9668 3.743-1.6661 8.8939-5.1242 22.9132 6.7903 23.2063 77.6531H.1129z" />
+      </clipPath>
+      <clipPath id="mountain-6" transform="scale(.002923977 .013888889)" clipPathUnits="objectBoundingBox">
+        <!-- viewBox="0 0 342 72"> -->
+        <path d="M27.6234.0591l21.7383 6.2393 25.6599 1.8934 35.1893 19.4581 9.606 2.1601 13.0363 10.079 41.1441 17.3667 167.3472 14.2799H.0269z" />
+      </clipPath>
+    </defs>
+  </svg>
+</body>
+
+</html>
