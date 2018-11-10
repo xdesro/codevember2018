@@ -1,0 +1,420 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #fafafa, #e2e2e2);
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+}
+
+.scene {
+    font-size: 0.8vmin;
+    position: relative;
+    display: grid;
+    overflow: hidden;
+    width: 80vmin;
+    height: 80vmin;
+    border-radius: 100%;
+    background-color: #4b2b61;
+
+    &:before {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        bottom: 30em;
+        left: 0;
+        width: 70%;
+        height: 35%;
+        margin: 0 auto;
+        content: "";
+        opacity: 0.9;
+        background: white;
+
+        clip-path: url(#bokeh);
+    }
+}
+
+.sky {
+    position: relative;
+    overflow: hidden;
+    height: 50em;
+    background-image: linear-gradient(to bottom, #33024a, #6700ba 30%, #b140ff);
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.cloud {
+    position: absolute;
+    background: linear-gradient(to bottom, #e81de2, transparentize(#d460ff, 1));
+
+    &:nth-of-type(1) {
+        position: absolute;
+        top: 24em;
+        width: 35em;
+        height: 16em;
+        background: linear-gradient(to bottom, #e81de2, transparentize(#d460ff, 1));
+
+        clip-path: url(#cloud-1);
+    }
+
+    &:nth-of-type(2) {
+        top: 8em;
+        left: 8em;
+        width: 40em;
+        height: 14.5em;
+
+        clip-path: url(#cloud-2);
+    }
+
+    &:nth-of-type(3) {
+        top: 14em;
+        right: 0;
+        width: 50.4em;
+        height: 20em;
+        background: linear-gradient(to bottom, #bc00ce, transparent);
+
+        clip-path: url(#cloud-3);
+    }
+
+    &:nth-of-type(4) {
+        top: 24em;
+        right: 0;
+        width: 30em;
+        height: 20em;
+
+        clip-path: url(#cloud-4);
+    }
+
+    &:nth-of-type(5) {
+        top: 30em;
+        right: -8em;
+        width: 30em;
+        height: 20em;
+        background-image: linear-gradient(to bottom, #ff7ee9, #f2c7ff);
+
+        clip-path: url(#cloud-5);
+    }
+}
+
+.land {
+    position: relative;
+    overflow: hidden;
+    align-self: end;
+    height: 30em;
+
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.mountains {
+    position: relative;
+    height: 100%;
+}
+
+.mountain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &:nth-of-type(1) {
+        z-index: 1;
+        background: #f1f5f8;
+
+        clip-path: url(#mountain-1);
+
+        &:before {
+            position: absolute;
+            right: 0;
+            width: 61.5%;
+            height: 100%;
+            content: "";
+            background: linear-gradient(to bottom right, #cda8ee, #b02cfc, #cda8ee);
+
+            clip-path: url(#mountain-1-shade);
+        }
+    }
+
+    &:nth-of-type(2) {
+        background: #edebff;
+
+        clip-path: url(#mountain-2);
+
+        &:before {
+            position: absolute;
+            right: 0;
+            width: 52%;
+            height: 100%;
+            content: "";
+            background: linear-gradient(to bottom right, #e80be4, #b02cfc, #e924ff);
+
+            clip-path: url(#mountain-2-shade);
+        }
+    }
+}
+
+.backgrounds {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+
+    filter: url(#filter-trees);
+}
+
+.background {
+    position: absolute;
+    z-index: 1;
+    bottom: -1em;
+    width: 90em;
+    height: 20em;
+
+    clip-path: url(#background);
+    mix-blend-mode: overlay;
+
+    &:nth-of-type(1) {
+        background: linear-gradient(to right, #eabdec, #ba35f7);
+    }
+
+    &:nth-of-type(2) {
+        right: -10em;
+        height: 18em;
+        background: linear-gradient(to bottom, #5f194d, #ba35f7);
+    }
+}
+
+.foreground {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 14em;
+    background: #4900d8;
+    background-image: radial-gradient(circle at bottom left,
+        #c358e2,
+        transparent 20em),
+        radial-gradient(circle at center, #4d0559, transparent 40em),
+        radial-gradient(circle at center right, #c003b3, transparent 20em);
+
+    clip-path: url(#foreground);
+}
+
+.foreground-trees {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+
+    .tree {
+        position: absolute;
+        bottom: 0;
+        width: 5em;
+        height: 8em;
+        background-image: linear-gradient(to bottom,
+            #2a0231,
+            transparentize(#2a0231, 0.9));
+
+        clip-path: url(#tree);
+
+        &:nth-child(1) {
+            left: 1.5em;
+        }
+
+        &:nth-child(2) {
+            left: 8em;
+            height: 7.5em;
+        }
+
+        &:nth-child(3) {
+            left: 10em;
+            height: 9em;
+        }
+
+        &:nth-child(4) {
+            left: 16em;
+        }
+
+        &:nth-child(5) {
+            left: 20em;
+        }
+
+        &:nth-child(6) {
+            left: 22em;
+            width: 6em;
+            height: 9em;
+        }
+
+        &:nth-child(7) {
+            right: 35em;
+        }
+
+        &:nth-child(8) {
+            right: 30em;
+            width: 8em;
+            height: 12em;
+            background: linear-gradient(to bottom,
+                transparentize(#44edea, 0.5),
+                transparent);
+        }
+
+        &:nth-child(9) {
+            right: 28em;
+            width: 8em;
+            height: 11em;
+        }
+
+        &:nth-child(10) {
+            right: 22em;
+        }
+
+        &:nth-child(11) {
+            right: 15em;
+            width: 7em;
+            height: 10em;
+            background: linear-gradient(to bottom,
+                transparentize(#44edea, 0.5),
+                transparent);
+        }
+
+        &:nth-child(12) {
+            right: 10em;
+        }
+
+        &:nth-child(13) {
+            right: 5em;
+            height: 9em;
+        }
+
+        &:nth-child(14) {
+            right: 2em;
+        }
+    }
+}
+
+.sea {
+    position: relative;
+    overflow: hidden;
+    height: 50em;
+    margin-top: -1em;
+    transform: scale(1.1);
+    background-image: radial-gradient(circle at top right,
+        #dbe2d1,
+        #7566f0,
+        #6ac7f8),
+        radial-gradient(circle at 60% 50%, #53e9ea, transparent 10em);
+
+    grid-row: 2;
+    filter: url(#filter-ripples);
+}
+
+.reflection {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    &.mountains {
+        transform: scaleY(-0.6) translateY(40%);
+        opacity: 0.5;
+
+        mix-blend-mode: overlay;
+    }
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.5;
+
+    clip-path: url(#reflection-shadow);
+    mix-blend-mode: multiply;
+
+    &:nth-of-type(1) {
+        height: 15em;
+        background-image: radial-gradient(circle at center top,
+            #46e0f5,
+            transparentize(#448ced, 0.5));
+    }
+
+    &:nth-of-type(2) {
+        height: 10em;
+        background-image: radial-gradient(circle at center top,
+            #448ced,
+            transparent 60em);
+    }
+
+    &:nth-of-type(3) {
+        height: 7em;
+        background-image: radial-gradient(circle at 60% 0%,
+            #4524e0,
+            transparent 80em);
+    }
+}
+
+.ferns {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50em;
+}
+
+.fern {
+    position: absolute;
+    bottom: 0;
+    background: #170907;
+
+    &:nth-of-type(1) {
+        width: 100em;
+        height: 40em;
+        background-image: radial-gradient(circle at 20% 0%,
+            #6b1dc1,
+            transparent 20em),
+            radial-gradient(circle at 60% 40%, #6b1dc1, transparent 20em),
+            radial-gradient(circle at 100% 10%, #7d4f53, transparent 20em);
+
+        clip-path: url(#ferns-1);
+    }
+
+    &:nth-of-type(2) {
+        bottom: -10em;
+        left: -10em;
+        width: 30em;
+        height: 50em;
+        transform: rotate(45deg);
+        transform-origin: 50% 100%;
+        background: #2a1a16;
+        background-image: radial-gradient(circle at 80% 20%,
+            #9806a9,
+            transparent 15em);
+
+        clip-path: url(#ferns-2);
+    }
+
+    &:nth-of-type(3) {
+        right: -10em;
+        width: 20em;
+        height: 40em;
+        transform: rotate(-45deg);
+        transform-origin: 50% 100%;
+        background: #153d24;
+        background-image: radial-gradient(circle at 50% 10%,
+            #181d0e,
+            transparent 20em);
+
+        clip-path: url(#ferns-2);
+    }
+}
+
+svg {
+    position: absolute;
+}
