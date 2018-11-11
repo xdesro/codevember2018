@@ -1,0 +1,84 @@
+body *, body *:before, body *:after {
+  box-sizing: border-box; }
+
+.app {
+  display: grid;
+  place-items: center;
+  height: 100vh; }
+
+[class^="apple"] {
+  grid-row: 1;
+  grid-column: 1;
+  width: 50vmin;
+  height: 50vmin;
+  position: relative;
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-timing-function: steps(1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate; }
+
+.apple-1 {
+  clip-path: url(#apple-logo);
+  position: relative;
+  background-image: repeating-linear-gradient(to bottom, #5CBBE1, #5CBBE1 2vmin, #E57A60 2vmin, #E57A60 4vmin); }
+  .apple-1:before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 13vmin;
+    right: 10vmin;
+    background-image: repeating-linear-gradient(-45deg, #52C5B0, #52C5B0 2vmin, #4D7553 2vmin, #4D7553 4vmin); }
+  .apple-1:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 10vmin;
+    right: 0;
+    background-image: repeating-linear-gradient(to bottom, #F2D6D2, #F2D6D2 2vmin, #E57A60 2vmin, #E57A60 4vmin); }
+  .apple-1 .child {
+    position: absolute;
+    width: 16vmin;
+    height: 100%;
+    background-image: repeating-linear-gradient(to bottom, #144259, #144259 2vmin, #F8DADC 2vmin, #F8DADC 4vmin); }
+    .apple-1 .child:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      left: 0;
+      width: 13vmin;
+      background-image: repeating-linear-gradient(to bottom, #144259, #144259 2vmin, #6DBD86 2vmin, #6DBD86 4vmin); }
+
+.apple-2 {
+  clip-path: url(#apple-logo);
+  background-image: radial-gradient(circle at 50% 0, #28F3DF, #28F3DF 10vmin, transparent 30vmin), linear-gradient(30deg, transparent, transparent 40vmin, #1A87F6 40vmin, transparent 50vmin), linear-gradient(-30deg, transparent, transparent 32vmin, #1505DA 32vmin, #128BE6 55vmin), linear-gradient(30deg, transparent, transparent 25vmin, #14157F 25vmin, #1423BE 100%), linear-gradient(to top, #141E97, #000A18 40%);
+  animation-delay: 500ms; }
+
+.apple-3 {
+  animation-delay: 1s;
+  background-image: radial-gradient(circle at 60% 9vmin, rgba(255, 0, 191, 0.5), transparent 7vmin), radial-gradient(circle at 40vmin 23vmin, rgba(255, 250, 57, 0.5), transparent 11vmin), radial-gradient(circle at 36vmin 42vmin, rgba(0, 229, 255, 0.5), transparent 13vmin), radial-gradient(circle at 28vmin 49vmin, rgba(0, 44, 255, 0.5), transparent 11vmin); }
+  .apple-3:before {
+    content: "";
+    background: white;
+    clip-path: url(#apple-logo);
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+  .apple-3:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    content: "";
+    background: white;
+    clip-path: url(#apple-logo);
+    background-image: linear-gradient(to bottom, #FF00BF, #FFFA39, #00E5FF, #5E00FF);
+    margin-left: -1px; }
+
+@keyframes appear {
+  0% {
+    opacity: 1; }
+  50%, 100% {
+    opacity: 0; } }
+
+/*# sourceMappingURL=style.css.map */
