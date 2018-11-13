@@ -1,0 +1,189 @@
+body {
+    background: #f7cac9;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vmin;
+}
+
+div {
+    box-sizing: border-box;
+    width: 2em;
+    height: 2em;
+    transform: translate(-14em, -14em);
+    animation: float 1s ease alternate infinite;
+    box-shadow:
+        14em 0 #361d14,
+        16em 0 #361d14,
+        18em 0 #361d14,
+        20em 0 #361d14,
+        22em 0 #361d14,
+
+        12em 2em #361d14,
+        14em 2em #483500,
+        16em 2em #be9b3b,
+        18em 2em #be9b3b,
+        20em 2em #483500,
+        22em 2em #483500,
+        24em 2em #361d14,
+
+        8em 4em #361d14,
+        10em 4em #361d14,
+        12em 4em #aa7d00,
+        14em 4em #aa7d00,
+        16em 4em #aa7d00,
+        18em 4em #aa7d00,
+        20em 4em #aa7d00,
+        22em 4em #483500,
+        24em 4em #483500,
+        26em 4em #361d14,
+
+        6em 6em #361d14,
+        8em 6em #483500,
+        10em 6em #be9b3b,
+        12em 6em #483500,
+        14em 6em #483500,
+        16em 6em #aa7d00,
+        18em 6em #aa7d00,
+        20em 6em #aa7d00,
+        22em 6em #715300,
+        24em 6em #483500,
+        26em 6em #361d14,
+
+        4em 8em #361d14,
+        6em 8em #483500,
+        8em 8em #aa7d00,
+        10em 8em #aa7d00,
+        12em 8em #be9b3b,
+        14em 8em #be9b3b,
+        16em 8em #483500,
+        18em 8em #aa7d00,
+        20em 8em #aa7d00,
+        22em 8em #715300,
+        24em 8em #483500,
+        26em 8em #361d14,
+
+        4em 10em #361d14,
+        6em 10em #aa7d00,
+        8em 10em #aa7d00,
+        10em 10em #aa7d00,
+        12em 10em #aa7d00,
+        14em 10em #aa7d00,
+        16em 10em #be9b3b,
+        18em 10em #aa7d00,
+        20em 10em #aa7d00,
+        22em 10em #715300,
+        24em 10em #483500,
+        26em 10em #361d14,
+
+        2em 12em #361d14,
+        4em 12em #be9b3b,
+        6em 12em #483500,
+        8em 12em #483500,
+        10em 12em #aa7d00,
+        12em 12em #aa7d00,
+        14em 12em #aa7d00,
+        16em 12em #aa7d00,
+        18em 12em #aa7d00,
+        20em 12em #715300,
+        22em 12em #483500,
+        24em 12em #361d14,
+
+        0em 14em #361d14,
+        2em 14em #483500,
+        4em 14em #aa7d00,
+        6em 14em #be9b3b,
+        8em 14em #be9b3b,
+        10em 14em #483500,
+        12em 14em #aa7d00,
+        14em 14em #aa7d00,
+        16em 14em #aa7d00,
+        18em 14em #715300,
+        20em 14em #715300,
+        22em 14em #361d14,
+
+        0em 16em #361d14,
+        2em 16em #be9b3b,
+        4em 16em #aa7d00,
+        6em 16em #aa7d00,
+        8em 16em #aa7d00,
+        10em 16em #be9b3b,
+        12em 16em #aa7d00,
+        14em 16em #715300,
+        16em 16em #715300,
+        18em 16em #483500,
+        20em 16em #361d14,
+
+        0em 18em #361d14,
+        2em 18em #be9b3b,
+        4em 18em #aa7d00,
+        6em 18em #aa7d00,
+        8em 18em #aa7d00,
+        10em 18em #aa7d00,
+        12em 18em #715300,
+        14em 18em #715300,
+        16em 18em #715300,
+        18em 18em #361d14,
+
+        0em 20em #361d14,
+        2em 20em #be9b3b,
+        4em 20em #aa7d00,
+        6em 20em #aa7d00,
+        8em 20em #aa7d00,
+        10em 20em #715300,
+        12em 20em #715300,
+        14em 20em #483500,
+        16em 20em #361d14,
+
+        0em 22em #361d14,
+        2em 22em #be9b3b,
+        4em 22em #aa7d00,
+        6em 22em #aa7d00,
+        8em 22em #aa7d00,
+        10em 22em #715300,
+        12em 22em #715300,
+        14em 22em #361d14,
+
+        2em 24em #361d14,
+        4em 24em #483500,
+        6em 24em #715300,
+        8em 24em #715300,
+        10em 24em #483500,
+        12em 24em #361d14,
+
+        4em 26em #361d14,
+        6em 26em #361d14,
+        8em 26em #361d14,
+        10em 26em #361d14;
+
+    position: relative;
+
+    &:before {
+        box-sizing: border-box;
+        content: "";
+        height: 8em;
+        width: 30em;
+        position: absolute;
+        bottom: -30em;
+        opacity: .5;
+        background: radial-gradient(#361d14, transparent 14em);
+        animation: shadow-float 1s ease alternate infinite;
+
+        filter: blur(1em);
+        transform: translate(-8em, 0);
+    }
+}
+
+@keyframes float {
+    to {
+        transform: translate(-14em, -18em);
+    }
+}
+
+@keyframes shadow-float {
+    to {
+        opacity: .1;
+        transform: translate(-8em, 4em);
+    }
+}
