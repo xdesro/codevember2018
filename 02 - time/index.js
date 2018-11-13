@@ -1,7 +1,3 @@
-require('normalize.css/normalize.css');
-require('./styles/index.scss');
-import moment from 'moment';
-
 const dayEl = document.querySelector('.date');
 const clockEl = document.querySelector('.clock')
 dayEl.innerHTML = `${moment().format('D')} <span>${moment().format('MMM')}</span>`
