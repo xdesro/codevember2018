@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Arvo:700");
+
+body {
+    font-family: "Arvo", serif;
+    background: black;
+
+    &:after {
+        content: "black hole";
+        position: absolute;
+        color: rgba(white, .1);
+        z-index: 2;
+        transform: rotate(90deg) translateX(-18vh);
+        transform-origin: 0% 100%;
+        white-space: nowrap;
+        top: 0;
+        left: 0;
+        font-size: 18vh;
+    }
+}
+
+svg {
+    position: absolute;
+}
