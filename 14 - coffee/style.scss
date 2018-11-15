@@ -1,0 +1,280 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+
+$tan: #f4f3e9;
+$brown: #312b26;
+
+body {
+  min-height: 100vh;
+  background: $tan;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  justify-content: center;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+}
+
+.gent {
+  $height: 40vmin;
+  $width: $height * 0.74;
+  $font: $height / 100;
+  height: $height;
+  width: $width;
+  font-size: $font;
+  margin-bottom: 2vmin;
+  position: relative;
+}
+
+.shirt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $brown;
+  height: 74em;
+  border-radius: 0 0 100% 100%;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+
+  &:before,
+  &:after {
+    content: "";
+    background: $tan;
+    position: absolute;
+  }
+
+  &:before {
+    border-radius: 100%;
+    height: 3.5em;
+    width: 3.5em;
+    right: calc(50% - 3em);
+    bottom: 5em;
+    box-shadow: 0 -10em $tan;
+  }
+
+  &:after {
+    width: 1.5em;
+    height: 37em;
+    right: calc(50% - 8em);
+    bottom: 0;
+  }
+}
+
+.pocket {
+  position: absolute;
+  bottom: 4em;
+  right: 0;
+  border: 1.5em solid $tan;
+  height: 20em;
+  width: 20em;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    background-color: $tan;
+    width: 1.5em;
+    height: 20em;
+    transform-origin: 0% 0%;
+    transform: rotate(-45deg) translate(-0.5em);
+    box-shadow: 6.5em 0 $tan, -6.5em 0 $tan;
+    display: inline-block;
+  }
+}
+
+.hat {
+  height: 13em;
+  width: 36em;
+  margin: 0 auto;
+  border-radius: 3em 3em 0 0;
+  background: $brown;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 1.5em;
+    width: 29em;
+    position: absolute;
+    left: 0;
+    bottom: 2em;
+    background: $tan;
+    box-shadow: -4em -3.5em $tan, -8em -7em $tan;
+  }
+}
+
+.hat-brim {
+  height: 12em;
+  width: 50em;
+  background: $brown;
+  margin: 0 auto;
+  display: grid;
+  border-radius: 12em;
+  grid-template-columns: repeat(7, 1fr);
+  overflow: hidden;
+  transform: translateY(calc(-50% + 1.5em));
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+
+  &:before,
+  &:after {
+    content: "";
+  }
+
+  &:before {
+    border: 1.5em solid $tan;
+    border-right: none;
+    height: 15em;
+    border-radius: 12em 0 0 12em;
+    margin-top: -1.5em;
+    grid-column: 3 / span 4;
+  }
+
+  &:after {
+    border-left: 1.5em solid $tan;
+    grid-column: 7 / span 2;
+  }
+}
+
+.head {
+  height: 30em;
+  width: 25em;
+  background: $brown;
+  left: 29em;
+  top: 22em;
+  position: absolute;
+
+  &:before,
+  &:after {
+    content: "";
+    background: $brown;
+    position: absolute;
+  }
+
+  &:before {
+    width: 6em;
+    height: 6em;
+    border-radius: 100%;
+    left: -3em;
+    top: 7em;
+  }
+
+  &:after {
+    right: -3.5em;
+    height: 17em;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    width: 3.5em;
+  }
+}
+
+.bangs {
+  width: 16em;
+  background: $tan;
+  border-radius: 0 100% 100% 0;
+  border-bottom-right-radius: 140% 100%;
+  height: 17em;
+  position: absolute;
+  top: -10em;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+.hair {
+  width: 24em;
+  height: 28em;
+  background: $brown;
+  position: absolute;
+  top: 22em;
+  left: 19.5em;
+  clip-path: url(#hair);
+
+  &:before {
+    content: "";
+    height: 1.5em;
+    width: 100%;
+    margin-top: 2em;
+    background: $tan;
+    box-shadow: 0 3.8em $tan, 0 7.6em $tan, 0 11.4em $tan, 0 15.2em $tan;
+    display: inline-block;
+  }
+}
+
+.eye {
+  background-color: $tan;
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  top: 5em;
+  right: 3em;
+  transform: rotate(-45deg);
+  border-radius: 0 100% 0 100%;
+
+  &:before {
+    background-color: $brown;
+    content: "";
+    border-radius: 100%;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+  }
+}
+
+.moustache {
+  width: 20em;
+  height: 5em;
+  position: absolute;
+  right: -10em;
+  bottom: 7em;
+
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    clip-path: url(#moustache);
+  }
+
+  &:before {
+    background: $tan;
+  }
+
+  &:after {
+    transform: rotateY(180deg);
+    background: $brown;
+  }
+}
+
+.collar {
+  width: 33em;
+  height: 28em;
+  clip-path: url(#collar-outer);
+  background: $tan;
+  position: absolute;
+  right: 18em;
+  bottom: 28em;
+
+  &:before {
+    content: "";
+    clip-path: url(#collar);
+    background: $brown;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 93%;
+    height: 84%;
+  }
+}
+
+svg {
+  position: absolute;
+}

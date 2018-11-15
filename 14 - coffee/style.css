@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+body {
+  min-height: 100vh;
+  background: #f4f3e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  justify-content: center; }
+  body *,
+  body *:before,
+  body *:after {
+    box-sizing: border-box; }
+
+.gent {
+  height: 40vmin;
+  width: 29.6vmin;
+  font-size: 0.4vmin;
+  margin-bottom: 2vmin;
+  position: relative; }
+
+.shirt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #312b26;
+  height: 74em;
+  border-radius: 0 0 100% 100%;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%); }
+  .shirt:before, .shirt:after {
+    content: "";
+    background: #f4f3e9;
+    position: absolute; }
+  .shirt:before {
+    border-radius: 100%;
+    height: 3.5em;
+    width: 3.5em;
+    right: calc(50% - 3em);
+    bottom: 5em;
+    box-shadow: 0 -10em #f4f3e9; }
+  .shirt:after {
+    width: 1.5em;
+    height: 37em;
+    right: calc(50% - 8em);
+    bottom: 0; }
+
+.pocket {
+  position: absolute;
+  bottom: 4em;
+  right: 0;
+  border: 1.5em solid #f4f3e9;
+  height: 20em;
+  width: 20em;
+  overflow: hidden; }
+  .pocket:before {
+    content: "";
+    background-color: #f4f3e9;
+    width: 1.5em;
+    height: 20em;
+    transform-origin: 0% 0%;
+    transform: rotate(-45deg) translate(-0.5em);
+    box-shadow: 6.5em 0 #f4f3e9, -6.5em 0 #f4f3e9;
+    display: inline-block; }
+
+.hat {
+  height: 13em;
+  width: 36em;
+  margin: 0 auto;
+  border-radius: 3em 3em 0 0;
+  background: #312b26;
+  position: relative; }
+  .hat:before {
+    content: "";
+    display: inline-block;
+    height: 1.5em;
+    width: 29em;
+    position: absolute;
+    left: 0;
+    bottom: 2em;
+    background: #f4f3e9;
+    box-shadow: -4em -3.5em #f4f3e9, -8em -7em #f4f3e9; }
+
+.hat-brim {
+  height: 12em;
+  width: 50em;
+  background: #312b26;
+  margin: 0 auto;
+  display: grid;
+  border-radius: 12em;
+  grid-template-columns: repeat(7, 1fr);
+  overflow: hidden;
+  transform: translateY(calc(-50% + 1.5em));
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%); }
+  .hat-brim:before, .hat-brim:after {
+    content: ""; }
+  .hat-brim:before {
+    border: 1.5em solid #f4f3e9;
+    border-right: none;
+    height: 15em;
+    border-radius: 12em 0 0 12em;
+    margin-top: -1.5em;
+    grid-column: 3 / span 4; }
+  .hat-brim:after {
+    border-left: 1.5em solid #f4f3e9;
+    grid-column: 7 / span 2; }
+
+.head {
+  height: 30em;
+  width: 25em;
+  background: #312b26;
+  left: 29em;
+  top: 22em;
+  position: absolute; }
+  .head:before, .head:after {
+    content: "";
+    background: #312b26;
+    position: absolute; }
+  .head:before {
+    width: 6em;
+    height: 6em;
+    border-radius: 100%;
+    left: -3em;
+    top: 7em; }
+  .head:after {
+    right: -3.5em;
+    height: 17em;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    width: 3.5em; }
+
+.bangs {
+  width: 16em;
+  background: #f4f3e9;
+  border-radius: 0 100% 100% 0;
+  border-bottom-right-radius: 140% 100%;
+  height: 17em;
+  position: absolute;
+  top: -10em;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%); }
+
+.hair {
+  width: 24em;
+  height: 28em;
+  background: #312b26;
+  position: absolute;
+  top: 22em;
+  left: 19.5em;
+  clip-path: url(#hair); }
+  .hair:before {
+    content: "";
+    height: 1.5em;
+    width: 100%;
+    margin-top: 2em;
+    background: #f4f3e9;
+    box-shadow: 0 3.8em #f4f3e9, 0 7.6em #f4f3e9, 0 11.4em #f4f3e9, 0 15.2em #f4f3e9;
+    display: inline-block; }
+
+.eye {
+  background-color: #f4f3e9;
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  top: 5em;
+  right: 3em;
+  transform: rotate(-45deg);
+  border-radius: 0 100% 0 100%; }
+  .eye:before {
+    background-color: #312b26;
+    content: "";
+    border-radius: 100%;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%); }
+
+.moustache {
+  width: 20em;
+  height: 5em;
+  position: absolute;
+  right: -10em;
+  bottom: 7em; }
+  .moustache:before, .moustache:after {
+    content: "";
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    clip-path: url(#moustache); }
+  .moustache:before {
+    background: #f4f3e9; }
+  .moustache:after {
+    transform: rotateY(180deg);
+    background: #312b26; }
+
+.collar {
+  width: 33em;
+  height: 28em;
+  clip-path: url(#collar-outer);
+  background: #f4f3e9;
+  position: absolute;
+  right: 18em;
+  bottom: 28em; }
+  .collar:before {
+    content: "";
+    clip-path: url(#collar);
+    background: #312b26;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 93%;
+    height: 84%; }
+
+svg {
+  position: absolute; }
+
+/*# sourceMappingURL=style.css.map */
