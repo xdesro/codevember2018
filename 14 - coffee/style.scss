@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
-
 $tan: #f4f3e9;
 $brown: #312b26;
 
@@ -9,13 +7,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Josefin Sans", sans-serif;
   justify-content: center;
 
   *,
   *:before,
   *:after {
     box-sizing: border-box;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // This is straight up ripped from Ana Tudor btw
+    background-image: url(http://www.transparenttextures.com/patterns/redox-01.png),
+      url(http://www.transparenttextures.com/patterns/redox-02.png),
+      url(http://www.transparenttextures.com/patterns/rice-paper-3.png);
+    mix-blend-mode: multiply;
+    opacity: .7;
   }
 }
 
@@ -221,6 +233,7 @@ body {
     left: 0;
     right: 0;
     margin: 0 auto;
+    animation: BLIMEY-MATE-LOOK-AROUND-FOR-ONCE-IN-YOUR-GODDAMN-LIFE 5s linear infinite;
     transform: translateY(-50%);
   }
 }
@@ -277,4 +290,16 @@ body {
 
 svg {
   position: absolute;
+}
+
+@keyframes BLIMEY-MATE-LOOK-AROUND-FOR-ONCE-IN-YOUR-GODDAMN-LIFE {
+  35%,
+  50% {
+    transform: translate(1em, calc(-50% + 1em));
+  }
+
+  75%,
+  90% {
+    transform: translate(-1em, calc(-50% - 1em));
+  }
 }
