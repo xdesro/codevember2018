@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  background: black;
+  font-family: Helvetica, "Roboto", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app {
+  grid-template-rows: 1fr auto 1fr;
+  display: grid;
+  transition: all 0.2s ease;
+}
+
+.wrapper {
+  padding: 10vmin;
+  border: 1px solid white;
+  cursor: all-scroll;
+}
+
+p {
+  margin: 0;
+  align-self: end;
+  font-size: 4vmin;
+}
+
+.rotated {
+  font-size: 2.5vmin;
+  transform: rotate(180deg);
+  align-self: start;
+}
