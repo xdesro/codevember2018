@@ -1,0 +1,627 @@
+body {
+  background: #2E2C2F;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; }
+
+.app {
+  max-width: 30vmin;
+  padding: 6vmin;
+  border: 1.2vmin solid #FFF1D4;
+  border-radius: 0 0 6vmin 6vmin;
+  font-size: 6vmin; }
+  .app svg {
+    width: 24vmin;
+    fill: none;
+    stroke: #FFF1D4;
+    stroke-width: 0.8571428571vmin;
+    stroke-dasharray: 30vmin;
+    stroke-dashoffset: 60vmin;
+    animation: draw 3s linear infinite;
+    animation-fill-mode: forwards; }
+
+.grid {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr); }
+
+.square {
+  width: 100%;
+  height: 100%;
+  background: #729B79;
+  mix-blend-mode: difference;
+  opacity: 0;
+  animation: appear 2s steps(1) infinite; }
+  .square:nth-child(1) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(2) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(3) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(4) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(5) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(6) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(7) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(8) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(9) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(10) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(11) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(12) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(13) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(14) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(15) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(16) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(17) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(18) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(19) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(20) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(21) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(22) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(23) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(24) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(25) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(26) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(27) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(28) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(29) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(30) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(31) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(32) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(33) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(34) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(35) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(36) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(37) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(38) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(39) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(40) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(41) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(42) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(43) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(44) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(45) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(46) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(47) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(48) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(49) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(50) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(51) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(52) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(53) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(54) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(55) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(56) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(57) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(58) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(59) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(60) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(61) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(62) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(63) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(64) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(65) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(66) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(67) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(68) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(69) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(70) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(71) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(72) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(73) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(74) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(75) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(76) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(77) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(78) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(79) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(80) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(81) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(82) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(83) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(84) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(85) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(86) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(87) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(88) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(89) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(90) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(91) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(92) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(93) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(94) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(95) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(96) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(97) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(98) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(99) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(100) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(101) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(102) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(103) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(104) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(105) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(106) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(107) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(108) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(109) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(110) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(111) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(112) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(113) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(114) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(115) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(116) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(117) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(118) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(119) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(120) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(121) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(122) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(123) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(124) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(125) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(126) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(127) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(128) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(129) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(130) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(131) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(132) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(133) {
+    background: #BACDB0;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(134) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(135) {
+    background: #475B63;
+    animation-duration: 2s;
+    animation-delay: 1s; }
+  .square:nth-child(136) {
+    background: #729B79;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(137) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(138) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(139) {
+    background: #475B63;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(140) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(141) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 1s; }
+  .square:nth-child(142) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+  .square:nth-child(143) {
+    background: #729B79;
+    animation-duration: 1s;
+    animation-delay: 2s; }
+  .square:nth-child(144) {
+    background: #BACDB0;
+    animation-duration: 2s;
+    animation-delay: 2s; }
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes appear {
+  50% {
+    opacity: 1; } }
+
+/*# sourceMappingURL=style.css.map */
