@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:700');
+
+$black: #2E3033;
+$blue:#5690F7;
+$teal: #98E5FC;
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  color: $black;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  &:hover {
+    background: $blue;
+    div {
+      color: white;
+      &:before, &:after {
+        background: white;
+      }
+    }
+  }
+}
+
+div {
+  cursor: pointer;
+  position: relative;
+  font-size: 22vmin;
+  user-select: none;
+  padding-left: 20vmin;
+  &:before, &:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+  }
+  &:before {
+    width: 8vmin;
+    height: 20vmin;
+    background: $blue;
+    left: 0;
+    top: 7vmin;
+  }
+  &:after {
+    top: 7vmin;
+    width: 8vmin;
+    height: 15vmin;
+    background: $blue;
+    border-radius: 0 100vh 100vh 0;
+    box-shadow: 0 1vmin $teal, 0 2vmin $teal, 0 3vmin $teal, 0 4vmin $teal, 0 5vmin $teal, 0 6vmin $teal, 0 7vmin $teal, 0 8vmin $teal, 0 9vmin $teal, 0 10vmin $teal;
+    left: 8vmin;
+  }
+}
