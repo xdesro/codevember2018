@@ -1,0 +1,457 @@
+$white: #FFFFFF;
+$off-white: #FDF4F4;
+$black:#222;
+$brown-dark: #3C1D0E;
+$brown-light: #58341F;
+$orange-deep:#D74F28;
+$orange-mid: #F29E79;
+$yellow-light: #F8EAC1;
+$yellow-deep: #f8cf6d;
+$puce-light: #F8D2C1;
+$puce-dark: #DC9B8C;
+
+@mixin cylinder-sides($size) {
+  @for $i from 0 through 19 {
+    .s#{$i} {
+      transform: rotateY(#{(($i + 1) * 2 - 1) * 9deg}) translate3D(-50%, 0, #{$size});
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin create-cube($width, $height, $length, $colors:null) {
+  width: $width;
+  height: $height;
+  margin: -#{$height / 2} 0 0 -#{$width / 2};
+
+  .front {
+    transform: translateZ(#{$length / 2});
+  }
+
+  .back {
+    transform: translateZ(-#{$length / 2}) rotateY(180deg);
+  }
+
+  .left,
+  .right {
+    width: $length;
+    height: $height;
+  }
+
+  .top {
+    width: $width;
+    height: $length;
+  }
+
+}
+
+@mixin create-cylinder($diameter, $height) {
+  width: $diameter;
+  height: $height;
+  margin: -#{$height / 2} 0 0 -#{$diameter / 2};
+  @include cylinder-sides(#{$diameter / 2});
+
+  .top {
+    width: $diameter;
+    height: $diameter;
+  }
+}
+
+body {
+  margin: 0;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: $black;
+}
+
+.app {
+  perspective: 100vmin;
+  overflow: hidden;
+  width: 90vmin;
+  max-width: 1000px;
+  max-height: 1000px;
+  height: 90vmin;
+  font-size: 237.5%;
+  animation: sketch 0.3s infinite;
+  background: $off-white;
+}
+
+.face {
+  box-shadow: inset 0 0 0 1px transparentize($white, .5);
+}
+
+.scene,
+.shape,
+.face,
+.face-wrapper,
+.cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.scene {
+  $width: 80em;
+  $height: 80em;
+  width: $width;
+  height: $height;
+  margin: -#{$height / 2} 0 0 -#{$width / 2};
+  transform: rotateX(-405deg) rotateY(-55deg);
+  top: 50%;
+  left: 50%;
+  background: transparentize(black, .9)
+}
+
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+
+.face,
+.face-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+}
+
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.side {
+  left: 50%;
+}
+
+.cube {
+  .front {
+    width: 100%;
+    height: 100%;
+  }
+
+  .back {
+    width: 100%;
+    height: 100%;
+    left: 100%;
+  }
+
+  .left {
+    transform: rotateY(90deg) translateX(-50%);
+    left: 100%;
+  }
+
+  .right {
+    transform: rotateY(-90deg) translateX(-50%);
+  }
+
+  .top {
+    transform: rotateX(90deg) translateY(-50%);
+  }
+}
+
+.cylinder {
+  .top {
+    transform: rotateX(90deg) translateY(-50%);
+  }
+
+  .top {
+
+    border-radius: 50%;
+  }
+
+  .side {
+    width: 0.5em;
+    height: 0.5em;
+  }
+}
+
+.angle {
+  .front {
+    width: 100%;
+    height: 100%;
+  }
+
+  .back {
+    width: 100%;
+    height: 100%;
+    left: 100%;
+  }
+
+  .left {
+    transform: rotateY(90deg) translateX(-50%);
+    left: 100%;
+  }
+
+  .right {
+    transform: rotateY(-90deg) translateX(-50%);
+
+    .face {
+      left: -100%;
+      transform-origin: 100% 0;
+    }
+  }
+}
+
+.countertop {
+  @include create-cube(26.3em, 1em, 7.2em);
+  transform: translate3D(6em, -7.7em, 2.3em) rotateY(90deg);
+
+  .face {
+    background-color: $orange-mid;
+  }
+
+  .top {
+    background-color: $white;
+  }
+}
+
+.stovetop {
+  @include create-cube(6.5em, 0.3em, 6.5em);
+  transform: translate3D(6.07em, -8.24em, 5.57em);
+
+  .face {
+    background-color: $brown-dark;
+  }
+
+  .top {
+    background-color: $brown-light;
+  }
+}
+
+[class*="heating"] {
+  @include create-cylinder(2.5em, 0.5em);
+
+  .top {
+    background-color: $orange-mid;
+  }
+
+  .side {
+    background-color: $orange-deep;
+  }
+}
+
+.heating-back-right {
+  transform: translate3D(4.5em, -8.5em, 3.85em);
+}
+
+.heating-front-right {
+  transform: translate3D(7.5em, -8.5em, 4em);
+}
+
+.heating-back-left {
+  transform: translate3D(4.5em, -8.5em, 7.11538em);
+}
+
+.heating-front-left {
+  transform: translate3D(7.5em, -8.5em, 7.07692em);
+}
+
+.back-wall {
+  @include create-cube(0.54em, 19.61em, 37.3em); // $width: 0.54em;
+  transform: translate3D(2.15385em, -10.65em, 0);
+
+  .face {
+    background-color: $yellow-light;
+  }
+}
+
+.cabinets {
+  @include create-cube(6.61em, 10.77em, 19.7em);
+  transform: translate3D(5.73em, -1.8em, 1.5em);
+
+  .face {
+    background-color: $orange-deep;
+  }
+}
+
+[class*="egg-white"] {
+  @include create-cylinder(1em, 0.2em);
+
+  .face {
+    background-color: $white;
+  }
+}
+
+.egg-white-1 {
+  transform: translate3D(6.6em, -8.5em, -0.2em);
+}
+
+.egg-white-2 {
+  transform: translate3D(7em, -8.5em, 1em);
+}
+
+[class*="egg-yellow"] {
+  @include create-cylinder(0.6em, 0.2em);
+
+  .face,
+  .side {
+    background-color: $yellow-deep;
+  }
+
+  .side {
+    width: 0.15em;
+  }
+}
+
+.egg-yellow-1 {
+  transform: translate3D(6.6em, -8.6em, -0.23077em);
+}
+
+.egg-yellow-2 {
+  transform: translate3D(7.1em, -8.6em, 1.0em);
+}
+
+.plate {
+  $width: 3.7em;
+  $height: 0.5em;
+  width: $width;
+  height: $height;
+  margin: -#{$height / 2} 0 0 -#{$width / 2};
+  transform: translate3D(7.1em, -8.3em, 0);
+  @include cylinder-sides(1.85em);
+
+  .side {
+    width: 0.6em;
+    height: $height;
+    background-color: $puce-dark;
+  }
+
+  .top {
+    width: $width;
+    height: $width;
+    background-color: $puce-light;
+  }
+}
+
+[class*="bacon"] {
+  @include create-cube(0.46em, 0.15em, 2.3em);
+
+  .face {
+    background-color: $orange-deep;
+  }
+}
+
+.bacon-bottom {
+  transform: translate3D(7.9em, -8.65em, 0.2em);
+}
+
+.bacon-top {
+  transform: translate3D(8em, -8.85em, 0.3em) rotateX(-10deg) rotateY(31.4deg);
+}
+
+.milkbox {
+  @include create-cube(1.5em, 3.3em, 1.3em);
+  transform: translate3D(3.88em, -9.7em, 0em);
+
+  .face {
+    background-color: $orange-deep;
+  }
+
+  .left,
+  .right {
+    background-color: $off-white;
+  }
+}
+
+.milkbox-top-left {
+  transform: translate3D(3.9em, -11.9em, 0.3em);
+  width: 1.5em;
+  height: 1.7em;
+  margin: -0.5em 0 0 -0.77em;
+
+  .face {
+    background-color: $puce-light;
+  }
+
+  .front {
+    height: 1.3em;
+    background-color: $orange-deep;
+    transform: translateZ(-0.35em) rotateX(32.7deg);
+  }
+
+  .back {
+    transform: translateZ(-0.35em) rotateY(180deg);
+  }
+
+  .left,
+  .right {
+    width: 0.7em;
+    height: 1.7em;
+
+    .face {
+      height: 1.3em;
+    }
+  }
+
+  .left {
+    .face {
+      transform: rotateZ(32.7deg);
+    }
+  }
+
+  .right {
+    .face {
+      transform: rotateZ(-32.7deg);
+    }
+  }
+}
+
+.milkbox-top-right {
+  transform: translate3D(3.9em, -11.9em, -0.4em) rotateX(90deg);
+  width: 1.5em;
+  height: 0.77em;
+  margin: -0.38em 0 0 -0.77em;
+
+  .face {
+    background-color: $puce-light;
+  }
+
+  .front {
+    height: 1.39em;
+    transform: translateZ(-0.57em) rotateX(56.3deg);
+  }
+
+  .back {
+    transform: translateZ(-0.57em) rotateY(180deg);
+  }
+
+  .left,
+  .right {
+    width: 1.15em;
+    height: 0.77em;
+
+    .face {
+      height: 1.39em;
+    }
+  }
+
+  .left {
+    .face {
+      transform: rotateZ(56.3deg);
+    }
+  }
+
+  .right {
+    .face {
+      transform: rotateZ(-56.3deg);
+    }
+  }
+
+  .bottom {
+    width: 1.5em;
+    height: 1.15em;
+  }
+}
+
+@keyframes sketch {
+  @for $i from 0 through 4 {
+    #{$i * 25%} {
+      filter: url('#sketch-#{$i}');
+    }
+  }
+}
