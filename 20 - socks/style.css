@@ -1,0 +1,278 @@
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  cursor: crosshair; }
+  body *,
+  body *:before,
+  body *:after {
+    box-sizing: border-box; }
+
+.app {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
+  grid-gap: 25px; }
+
+.city {
+  border: 4px solid #2E313A;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  cursor: pointer; }
+
+.denver {
+  background: #CED1E1;
+  position: relative;
+  overflow: hidden; }
+  .denver * {
+    transition: all .4s ease-in-out; }
+  .denver:before {
+    content: "";
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    background: white;
+    width: 50%;
+    height: 50%;
+    position: absolute; }
+  .denver .mountain {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    border: 4px solid #2E313A;
+    transform-origin: 0% 0%;
+    overflow: hidden;
+    position: absolute; }
+    .denver .mountain:nth-of-type(1) {
+      top: 50%;
+      transform: translateX(85%) rotate(45deg); }
+    .denver .mountain:nth-of-type(2) {
+      top: 40%;
+      transform: translateX(50%) rotate(45deg); }
+    .denver .mountain:nth-of-type(3) {
+      top: 50%;
+      transform: translateX(11%) rotate(45deg); }
+    .denver .mountain:before {
+      content: "";
+      margin-top: 5px;
+      margin-left: 5px;
+      height: 3px;
+      border-radius: 3px;
+      width: 100%;
+      background: #2E313A;
+      display: block;
+      box-shadow: 8px 8px #2E313A, 16px 16px #2E313A, 24px 24px #2E313A, 32px 32px #2E313A; }
+  .denver .bird {
+    width: 19px;
+    height: 7px;
+    overflow: hidden;
+    top: 20px;
+    left: 45px;
+    position: absolute; }
+    .denver .bird:nth-of-type(5) {
+      width: 14px;
+      height: 6px;
+      left: 30px;
+      top: 30px; }
+      .denver .bird:nth-of-type(5):before {
+        left: -18px; }
+      .denver .bird:nth-of-type(5):after {
+        right: -18px; }
+    .denver .bird:before, .denver .bird:after {
+      content: "";
+      width: 30px;
+      height: 30px;
+      border: 3px solid #2E313A;
+      display: inline-block;
+      border-radius: 100%;
+      position: absolute; }
+    .denver .bird:before {
+      left: -16px; }
+    .denver .bird:after {
+      right: -16px; }
+  .denver .cloud {
+    position: absolute;
+    width: 65px;
+    height: 24px;
+    z-index: 1; }
+    .denver .cloud:nth-of-type(6) {
+      top: 40px;
+      left: -30px; }
+    .denver .cloud:nth-of-type(7) {
+      top: 30px;
+      right: -15px; }
+    .denver .cloud:before, .denver .cloud:after {
+      content: "";
+      width: 45%;
+      height: 3px;
+      display: block;
+      background: #2E313A;
+      position: absolute;
+      border-radius: 4px;
+      bottom: 2px;
+      z-index: 2; }
+    .denver .cloud:after {
+      right: 0; }
+  .denver .cloud-inner {
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    position: relative; }
+    .denver .cloud-inner:after {
+      content: "";
+      width: 54px;
+      height: 40px;
+      background: #FFF;
+      border-radius: 100%;
+      display: block;
+      z-index: 1;
+      position: relative;
+      margin: 0 auto;
+      margin-top: 7px; }
+  .denver .poof {
+    border-radius: 100%;
+    background: #FFF;
+    border: 3px solid #2E313A;
+    position: absolute; }
+    .denver .poof:nth-of-type(1) {
+      width: 12px;
+      height: 12px;
+      bottom: -5px; }
+    .denver .poof:nth-of-type(2) {
+      width: 17px;
+      height: 17px;
+      bottom: -3px;
+      left: 9px; }
+    .denver .poof:nth-of-type(3) {
+      width: 25px;
+      height: 25px;
+      left: 0;
+      right: 0;
+      margin: 0 auto; }
+    .denver .poof:nth-of-type(4) {
+      width: 17px;
+      height: 17px;
+      bottom: -3px;
+      right: 9px; }
+    .denver .poof:nth-of-type(5) {
+      width: 12px;
+      height: 12px;
+      bottom: -5px;
+      right: 0; }
+  .denver:hover .mountain:nth-of-type(1) {
+    transform: translateX(92%) rotate(45deg); }
+  .denver:hover .mountain:nth-of-type(2) {
+    top: 40%;
+    transform: translateX(50%) rotate(45deg) scale(1.1); }
+  .denver:hover .mountain:nth-of-type(3) {
+    transform: translateX(4%) rotate(45deg); }
+  .denver:hover .bird {
+    transform: scale(0.4); }
+  .denver:hover .cloud {
+    transform: translateX(-50%) scale(1.2); }
+
+.boston {
+  position: relative; }
+  .boston * {
+    transition: all .4s ease-in-out; }
+  .boston .sock {
+    position: absolute; }
+    .boston .sock:nth-of-type(1) {
+      left: 35px;
+      top: -5px;
+      transform: rotate(-10deg);
+      transform-origin: 0 0; }
+      .boston .sock:nth-of-type(1) .leg:before {
+        display: none; }
+    .boston .sock:nth-of-type(2) {
+      z-index: 1;
+      left: 25px; }
+    .boston .sock .cuff {
+      background: #2E313A;
+      width: 38px;
+      height: 21px;
+      border: 4px solid #2E313A;
+      border-radius: 3px 3px 0 0;
+      position: relative; }
+      .boston .sock .cuff:before {
+        content: "";
+        width: 4px;
+        height: 15px;
+        border-radius: 3px;
+        background: white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 6.5px 0 #FFF, 13px 0 #FFF, 19.5px 0 #FFF, 26px 0 #FFF; }
+      .boston .sock .cuff:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 5px;
+        background: #CED1E1;
+        position: absolute;
+        top: 50%;
+        mix-blend-mode: multiply;
+        transform: translateY(-50%); }
+    .boston .sock .leg {
+      margin-top: -2px;
+      background: #FFF;
+      border: 4px solid #2E313A;
+      border-bottom: none;
+      width: 40px;
+      height: 80px;
+      margin-bottom: -20px;
+      border-radius: 0 3px 0 0;
+      position: relative; }
+      .boston .sock .leg:before {
+        content: "";
+        background: #2E313A;
+        border-radius: 3px;
+        height: 12px;
+        width: 3px;
+        position: absolute;
+        top: 30%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        transform: rotate(45deg);
+        box-shadow: 6px 6px #2E313A; }
+      .boston .sock .leg:after {
+        content: "";
+        z-index: 1;
+        background: #FFF;
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        bottom: 5px; }
+    .boston .sock .foot {
+      background: #FFF;
+      width: 80px;
+      height: 39px;
+      border: 4px solid #2E313A;
+      border-radius: 39px;
+      overflow: hidden;
+      position: relative; }
+      .boston .sock .foot:before, .boston .sock .foot:after {
+        content: "";
+        width: 30px;
+        height: 30px;
+        background: #CED1E1;
+        position: absolute;
+        border: 3px solid #2E313A;
+        bottom: -10px; }
+      .boston .sock .foot:before {
+        left: -10px; }
+      .boston .sock .foot:after {
+        right: -10px; }
+  .boston:hover .sock {
+    transform: scale(1.1); }
+    .boston:hover .sock:nth-of-type(1) {
+      transform: scale(1.1) rotate(-15deg); }
+
+/*# sourceMappingURL=style.css.map */
