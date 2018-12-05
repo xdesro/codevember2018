@@ -1,0 +1,37 @@
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom, #ddd, #eee); }
+
+.stripe {
+  background: rgba(170, 170, 170, 0.7);
+  height: 100%;
+  width: 2vw;
+  transform: skewX(35deg);
+  box-shadow: -40vw 0 rgba(170, 170, 170, 0.9), -20vw 0 rgba(170, 170, 170, 0.8), 0 0 rgba(170, 170, 170, 0.7), 20vw 0 rgba(170, 170, 170, 0.6), 40vw 0 rgba(170, 170, 170, 0.5), 60vw 0 rgba(170, 170, 170, 0.4), 80vw 0 rgba(170, 170, 170, 0.3), 100vw 0 rgba(170, 170, 170, 0.2), 120vw 0 rgba(170, 170, 170, 0.1); }
+
+canvas {
+  width: 100vmin !important;
+  height: 100vmin !important;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translateY(-60vmin);
+  mix-blend-mode: screen; }
+
+svg {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  fill: #aaa;
+  z-index: -1; }
+
+@keyframes float {
+  to {
+    transform: translateY(-60%); } }
+
+/*# sourceMappingURL=style.css.map */
