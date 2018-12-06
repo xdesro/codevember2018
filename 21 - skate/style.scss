@@ -1,0 +1,47 @@
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, #ddd, #eee);
+  }
+  
+  .stripe {
+    $stripe-color: #aaa;
+    background: transparentize($stripe-color, 0.3);
+    height: 100%;
+    width: 2vw;
+    transform: skewX(35deg);
+    box-shadow: -40vw 0 transparentize($stripe-color, 0.1),
+      -20vw 0 transparentize($stripe-color, 0.2), 0 0 transparentize($stripe-color, 0.3),
+      20vw 0 transparentize($stripe-color, 0.4), 40vw 0 transparentize($stripe-color, 0.5),
+      60vw 0 transparentize($stripe-color, 0.6), 80vw 0 transparentize($stripe-color, 0.7),
+      100vw 0 transparentize($stripe-color, 0.8), 120vw 0 transparentize($stripe-color, 0.9);
+  }
+  
+  canvas {
+    width: 100vmin !important;
+    height: 100vmin !important;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-60vmin);
+    mix-blend-mode: screen;
+  }
+  
+  svg {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    fill: #aaa;
+    z-index: -1;
+  }
+  
+  @keyframes float {
+    to {
+      transform: translateY(-60%);
+    }
+  }
+  

@@ -1,0 +1,399 @@
+// https://dribbble.com/shots/4114494-Location-icons
+
+$dark: #2E313A;
+$light: #CED1E1;
+$white: #FFF;
+
+body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    cursor: crosshair;
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+}
+
+.app {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+}
+
+.city {
+    border: 4px solid $dark;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.denver {
+    background: $light;
+    position: relative;
+    overflow: hidden;
+
+    * {
+        transition: all .4s ease-in-out;
+    }
+
+    &:before {
+        content: "";
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: translateY(-50%);
+        border-radius: 100%;
+        background: white;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+    }
+
+    .mountain {
+        width: 100%;
+        height: 100%;
+        background: $white;
+        border: 4px solid $dark;
+        transform-origin: 0% 0%;
+        overflow: hidden;
+        position: absolute;
+
+        &:nth-of-type(1) {
+            top: 50%;
+            transform: translateX(85%) rotate(45deg);
+        }
+
+        &:nth-of-type(2) {
+            top: 40%;
+            transform: translateX(50%) rotate(45deg);
+        }
+
+        &:nth-of-type(3) {
+            top: 50%;
+            transform: translateX(11%) rotate(45deg);
+        }
+
+        &:before {
+            content: "";
+            margin-top: 5px;
+            margin-left: 5px;
+            height: 3px;
+            border-radius: 3px;
+            width: 100%;
+            background: $dark;
+            display: block;
+            box-shadow: 8px 8px $dark, 16px 16px $dark, 24px 24px $dark, 32px 32px $dark;
+        }
+    }
+
+    .bird {
+        width: 19px;
+        height: 7px;
+        overflow: hidden;
+        top: 20px;
+        left: 45px;
+        position: absolute;
+
+        &:nth-of-type(5) {
+            width: 14px;
+            height: 6px;
+            left: 30px;
+            top: 30px;
+
+            &:before {
+                left: -18px;
+            }
+
+            &:after {
+                right: -18px;
+            }
+
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            border: 3px solid $dark;
+            display: inline-block;
+            border-radius: 100%;
+            position: absolute;
+        }
+
+        &:before {
+            left: -16px;
+        }
+
+        &:after {
+            right: -16px;
+        }
+    }
+
+    .cloud {
+        position: absolute;
+        width: 65px;
+        height: 24px;
+        z-index: 1;
+
+        &:nth-of-type(6) {
+            top: 40px;
+            left: -30px;
+        }
+
+        &:nth-of-type(7) {
+            top: 30px;
+            right: -15px;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            width: 45%;
+            height: 3px;
+            display: block;
+            background: $dark;
+            position: absolute;
+            border-radius: 4px;
+            bottom: 2px;
+            z-index: 2;
+        }
+
+        &:after {
+            right: 0;
+        }
+    }
+
+    .cloud-inner {
+        height: 20px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        &:after {
+            content: "";
+            width: 54px;
+            height: 40px;
+            background: $white;
+            border-radius: 100%;
+            display: block;
+            z-index: 1;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 7px;
+        }
+    }
+
+    .poof {
+        border-radius: 100%;
+        background: $white;
+        border: 3px solid $dark;
+        position: absolute;
+
+        &:nth-of-type(1) {
+            width: 12px;
+            height: 12px;
+            bottom: -5px;
+        }
+
+        &:nth-of-type(2) {
+            width: 17px;
+            height: 17px;
+            bottom: -3px;
+            left: 9px;
+        }
+
+        &:nth-of-type(3) {
+            width: 25px;
+            height: 25px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        &:nth-of-type(4) {
+            width: 17px;
+            height: 17px;
+            bottom: -3px;
+            right: 9px;
+        }
+
+        &:nth-of-type(5) {
+            width: 12px;
+            height: 12px;
+            bottom: -5px;
+            right: 0;
+        }
+
+    }
+
+    &:hover {
+        .mountain {
+            &:nth-of-type(1) {
+                transform: translateX(92%) rotate(45deg);
+            }
+
+            &:nth-of-type(2) {
+                top: 40%;
+                transform: translateX(50%) rotate(45deg) scale(1.1);
+            }
+
+            &:nth-of-type(3) {
+                transform: translateX(4%) rotate(45deg);
+            }
+        }
+
+        .bird {
+            transform: scale(0.4);
+        }
+
+        .cloud {
+            transform: translateX(-50%) scale(1.2);
+        }
+    }
+}
+
+.boston {
+    position: relative;
+
+    * {
+        transition: all .4s ease-in-out;
+    }
+
+    .sock {
+        position: absolute;
+
+        &:nth-of-type(1) {
+            left: 35px;
+            top: -5px;
+            transform: rotate(-10deg);
+            transform-origin: 0 0;
+
+            .leg:before {
+                display: none;
+            }
+        }
+
+        &:nth-of-type(2) {
+            z-index: 1;
+            left: 25px;
+        }
+
+        .cuff {
+            background: $dark;
+            width: 38px;
+            height: 21px;
+            border: 4px solid $dark;
+            border-radius: 3px 3px 0 0;
+            position: relative;
+
+            &:before {
+                content: "";
+                width: 4px;
+                height: 15px;
+                border-radius: 3px;
+                background: white;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                box-shadow: 6.5px 0 $white, 13px 0 $white, 19.5px 0 $white, 26px 0 $white;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 5px;
+                background: $light;
+                position: absolute;
+                top: 50%;
+                mix-blend-mode: multiply;
+                transform: translateY(-50%);
+            }
+        }
+
+        .leg {
+            margin-top: -2px;
+            background: $white;
+            border: 4px solid $dark;
+            border-bottom: none;
+            width: 40px;
+            height: 80px;
+            margin-bottom: -20px;
+            border-radius: 0 3px 0 0;
+            position: relative;
+
+            &:before {
+                content: "";
+                background: $dark;
+                border-radius: 3px;
+                height: 12px;
+                width: 3px;
+                position: absolute;
+                top: 30%;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                transform: rotate(45deg);
+                box-shadow: 6px 6px $dark;
+            }
+
+            &:after {
+                content: "";
+                z-index: 1;
+                background: $white;
+                position: absolute;
+                width: 100%;
+                height: 20px;
+                bottom: 5px;
+            }
+        }
+
+        .foot {
+            background: $white;
+            width: 80px;
+            height: 39px;
+            border: 4px solid $dark;
+            border-radius: 39px;
+            overflow: hidden;
+            position: relative;
+
+            &:before,
+            &:after {
+                content: "";
+                width: 30px;
+                height: 30px;
+                background: $light;
+                position: absolute;
+                border: 3px solid $dark;
+                bottom: -10px;
+            }
+
+            &:before {
+                left: -10px;
+            }
+
+            &:after {
+                right: -10px;
+            }
+        }
+    }
+
+    &:hover {
+        .sock {
+            transform: scale(1.1);
+
+            &:nth-of-type(1) {
+                transform: scale(1.1) rotate(-15deg);
+
+            }
+        }
+    }
+}
