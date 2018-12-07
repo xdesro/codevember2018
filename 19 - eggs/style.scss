@@ -12,7 +12,7 @@ $puce-dark: #DC9B8C;
 
 @mixin cylinder-sides($size) {
   @for $i from 0 through 19 {
-    .s#{$i} {
+    .side:nth-of-type(#{$i + 1}) {
       transform: rotateY(#{(($i + 1) * 2 - 1) * 9deg}) translate3D(-50%, 0, #{$size});
       box-shadow: none;
     }
